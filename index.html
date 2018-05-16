@@ -5,14 +5,14 @@
 </head>
 <body>
   <div id="root">
-    
+    <button v-bind:title="title">Hover over me</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script>
     var app = new Vue({
       el: '#root',
       data: {
-        
+        title: 'I am the vue title'
       }
     });
     
