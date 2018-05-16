@@ -17,13 +17,17 @@
       el: '#root',
       data: {
         names: ['Joe', 'Mary', 'Jane', 'Jack']
+      },
+      mounted() {
+        console.log('Ready');
+        document.querySelector('#button').addEventListener('click', () => {
+          let name = document.querySelector('#input');
+          app.names.push(name.value);
+          name.value = '';
+        })
       }
     });
-    document.querySelector('#button').addEventListener('click', () => {
-      let name = document.querySelector('#input');
-      app.names.push(name.value);
-      name.value = '';
-    })
+    
   </script>
 </body>
 </html>
