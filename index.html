@@ -9,7 +9,7 @@
       <li v-for="name in names" v-text="name"></li>
     </ul>
     <input id="input" type="text">
-    <button id="button">Add Name</button>
+    <button v-on:click="addName">Add Name</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script>
@@ -18,14 +18,19 @@
       data: {
         names: ['Joe', 'Mary', 'Jane', 'Jack']
       },
-      mounted() {
-        console.log('Ready');
-        document.querySelector('#button').addEventListener('click', () => {
-          let name = document.querySelector('#input');
-          app.names.push(name.value);
-          name.value = '';
-        })
+      methods: {
+        addName() {
+          console.log('addName')
+        }
       }
+      // mounted() {
+      //   console.log('Ready');
+      //   document.querySelector('#button').addEventListener('click', () => {
+      //     let name = document.querySelector('#input');
+      //     app.names.push(name.value);
+      //     name.value = '';
+      //   })
+      // }
     });
     
   </script>
