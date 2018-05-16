@@ -10,7 +10,13 @@
 
 <body>
 
-  <input type="text" id="input">
+  <div id="root">
+
+    <input type="text" id="input" v-model="message">
+
+    <p>The value of the input is: {{ message }}.</p>
+
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
@@ -19,7 +25,11 @@
       message: 'Hello World'
     };
 
-    document.querySelector('#input').value = data.message;
+    new Vue({
+      el: '#root',
+      data: data
+    })
+
   </script>
 
 </body>
