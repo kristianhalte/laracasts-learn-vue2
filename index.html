@@ -8,7 +8,7 @@
     <ul>
       <li v-for="name in names" v-text="name"></li>
     </ul>
-    <input id="input" type="text">
+    <input id="input" type="text" v-model="newName">
     <button v-on:click="addName">Add Name</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -16,21 +16,15 @@
     var app = new Vue({
       el: '#root',
       data: {
+        newName: '',
         names: ['Joe', 'Mary', 'Jane', 'Jack']
       },
       methods: {
         addName() {
-          console.log('addName')
+          this.names.push(this.newName);
+          this.newName = '';
         }
       }
-      // mounted() {
-      //   console.log('Ready');
-      //   document.querySelector('#button').addEventListener('click', () => {
-      //     let name = document.querySelector('#input');
-      //     app.names.push(name.value);
-      //     name.value = '';
-      //   })
-      // }
     });
     
   </script>
