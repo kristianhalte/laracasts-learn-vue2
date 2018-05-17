@@ -1,6 +1,6 @@
-Vue.component('component', {
+Vue.component('coupon', {
   template: `
-    
+    <input type="text" />
   `
 });
 
