@@ -1,7 +1,12 @@
 Vue.component('coupon', {
   template: `
-    <input type="text" />
-  `
+    <input placeholder="Enter your coupon code" @blur="onCouponApplied">
+  `,
+  methods: {
+    onCouponApplied() {
+      console.log('applied!');
+    }
+  }
 });
 
 let app = new Vue({
