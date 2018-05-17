@@ -4,11 +4,16 @@ Vue.component('coupon', {
   `,
   methods: {
     onCouponApplied() {
-      console.log('applied!');
+      this.$emit('applied');
     }
   }
 });
 
 let app = new Vue({
-  el: '#root'
+  el: '#root',
+  methods: {
+    onCouponApplied() {
+      console.log('coupon applied');
+    }
+  }
 });
