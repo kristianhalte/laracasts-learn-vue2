@@ -1,22 +1,24 @@
-// 1. Global Event object created
-window.Event = new Vue();
-
-Vue.component('coupon', {
+Vue.component('modal', {
   template: `
-    <input placeholder="Enter your coupon code" @blur="onCouponApplied">
-  `,
-  methods: {
-    onCouponApplied() {
-      // 2. local component emits custom event when trickered to global Event element
-      Event.$emit('applied');
-    }
-  }
+    <div class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modal title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  `
 });
 
 let app = new Vue({
-  el: '#root',
-  created() {
-    // 3. root element listening for event
-    Event.$on('applied', () => console.log('Handling it'))
-  }
+  el: '#root'
 });
