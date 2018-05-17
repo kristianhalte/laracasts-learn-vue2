@@ -10,11 +10,17 @@ Vue.component('modal', {
           <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
-          Some content
+          <slot>
+            Defaul;t content here.
+          </slot>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success">Save changes</button>
-          <button class="button">Cancel</button>
+          <button class="button is-success">
+            <slot name="footer-success"></slot>
+          </button>
+          <button class="button">
+            <slot name="footer-fail"></slot>
+          </button>
         </footer>
       </div>
     </div>
