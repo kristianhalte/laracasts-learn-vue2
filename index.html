@@ -5,8 +5,9 @@
 </head>
 <body>
   <div id="root">
+    <h1>Completed Tasks</h1>
     <ul>
-      <li v-for="task in tasks" v-text="task.description"></li>
+      <li v-for="task in tasks"  v-text="task.description" v-if="task.completed"></li>
     </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -16,10 +17,10 @@
       data: {
         tasks: [
         { description: 'Go to Store', completed: true },
-        { description: 'Finish screencast', completed: true },
-        { description: 'Make donation', completed: true },
-        { description: 'Clear inbox', completed: true },
-        { description: 'Make dinner', completed: true },
+        { description: 'Finish screencast', completed: false },
+        { description: 'Make donation', completed: false },
+        { description: 'Clear inbox', completed: false },
+        { description: 'Make dinner', completed: false },
         { description: 'Clean room', completed: true }
         ]
       },
