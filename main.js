@@ -1,24 +1,22 @@
+// 1. Global Event object created
+window.Event = new Vue();
+
 Vue.component('coupon', {
   template: `
     <input placeholder="Enter your coupon code" @blur="onCouponApplied">
   `,
   methods: {
     onCouponApplied() {
-      // 1. local component emits custom event when trickered
-      this.$emit('applied');
+      // 2. local component emits custom event when trickered to global Event element
+      Event.$emit('applied');
     }
   }
 });
 
 let app = new Vue({
   el: '#root',
-  data: {
-    couponApplied: false
-  },
-  methods: {
-    onCouponApplied() {
-      // 3. root method changes state
-      this.couponApplied = true;
-    }
+  created() {
+    // 3. root element listening for event
+    Event.$on('applied', () => console.log('Handling it'))
   }
 });
