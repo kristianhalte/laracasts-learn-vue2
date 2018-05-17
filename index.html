@@ -8,7 +8,9 @@
     <h1>All Tasks</h1>
     <ul>
       <li v-for="task in tasks">
-        {{ task.description }} <button>{{ task.completed ? 'Redo' : 'Complete' }}</button>
+        {{ task.description }}
+        <button v-if="task.completed">Redo</button>
+        <button v-if="!task.completed">Complete</button>
       </li>
     </ul>
     <h1>Incomplete Tasks</h1>
