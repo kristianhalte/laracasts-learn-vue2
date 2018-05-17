@@ -2,27 +2,17 @@
 <html>
 <head>
   <title></title>
-  <style>
-    .is-loading {
-      background: red;
-    }
-  </style>
 </head>
 <body>
   <div id="root">
-    <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
+    
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script>
     var app = new Vue({
       el: '#root',
       data: {
-        isLoading: false
-      },
-      methods: {
-        toggleClass() {
-          this.isLoading = true;
-        }
+        
       }
     });
     
