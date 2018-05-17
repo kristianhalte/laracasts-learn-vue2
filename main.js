@@ -6,7 +6,7 @@ Vue.component('modal', {
     }
   },
   template: `
-    <div class="modal">
+    <div class="modal is-active">
       <div class="modal-background"></div>
       <div class="modal-content">
         <div class="box">
@@ -19,5 +19,8 @@ Vue.component('modal', {
 })
 
 let app = new Vue({
-  el: '#root'
+  el: '#root',
+  data: {
+    showModal: false
+  }
 })
