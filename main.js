@@ -1,4 +1,4 @@
-Vue.component('component', {
+Vue.component('modal', {
   props: [],
   data() {
     return {
