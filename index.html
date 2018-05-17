@@ -5,18 +5,7 @@
 </head>
 <body>
   <div id="root">
-    <h1>All Tasks</h1>
-    <ul>
-      <li v-for="task in tasks">
-        {{ task.description }}
-        <button v-if="task.completed" @click="redoTask(task)">Redo</button>
-        <button v-if="!task.completed" @click="completeTask(task)">Complete</button>
-      </li>
-    </ul>
-    <h1>Incomplete Tasks</h1>
-    <ul>
-      <li v-for="task in incompleteTasks" v-text="task.description"></li>
-    </ul>
+    
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script>
@@ -33,17 +22,10 @@
         ]
       },
       methods: {
-        redoTask(task) {
-          task.completed = false;
-        },
-        completeTask(task) {
-          task.completed = true;
-        }
+        
       },
       computed: {
-        incompleteTasks() {
-          return this.tasks.filter(task => ! task.completed);
-        }
+        
       }
     });
     
