@@ -12,10 +12,13 @@ Vue.component('coupon', {
 
 let app = new Vue({
   el: '#root',
+  data: {
+    couponApplied: false
+  },
   methods: {
     onCouponApplied() {
-      // 3. root method
-      console.log('coupon applied');
+      // 3. root method changes state
+      this.couponApplied = true;
     }
   }
 });
