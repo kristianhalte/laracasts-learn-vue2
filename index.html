@@ -5,21 +5,26 @@
 </head>
 <body>
   <div id="root">
-    <h1>
-      {{ reversedMessage }}
-    </h1>
+    <ul>
+      <li v-for="task in tasks" v-text="task.description"></li>
+    </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script>
     var app = new Vue({
       el: '#root',
       data: {
-        message: 'Hello World'
+        tasks: [
+        { description: 'Go to Store', completed: true },
+        { description: 'Finish screencast', completed: true },
+        { description: 'Make donation', completed: true },
+        { description: 'Clear inbox', completed: true },
+        { description: 'Make dinner', completed: true },
+        { description: 'Clean room', completed: true }
+        ]
       },
       computed: {
-        reversedMessage() {
-          return this.message.split('').reverse().join('');
-        }
+        
       }
     });
     
