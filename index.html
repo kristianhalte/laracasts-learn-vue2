@@ -11,7 +11,9 @@
 </head>
 <body>
   <div id="root" class="container">
-    <modal></modal>
+    <progress-view inline-template>
+      <h1>Your progress through this course is {{ completionRate }}</h1>
+    </progress-view>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="main.js"></script>
