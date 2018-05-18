@@ -1,6 +1,9 @@
-# hello-vue
+# laracasts-learn-vue2
 
-> A Vue.js project
+> A Vue.js project to learn Vue and Webpack
+
+## Tutorial
+> [Learn Vue 2: Step By Step](https://laracasts.com/series/learn-vue-2-step-by-step)
 
 ## Build Setup
 
