@@ -6,10 +6,15 @@ Vue.component('coupon', {
   template: `
     <input type="text" :value="code" @input="updateCode($event.target.value)" ref="input">
   `,
+  data() {
+    return {
+      invalids: ['ALLFREE', 'SOMETHINGELSE']
+    }
+  },
   methods: {
     updateCode(code) {
       // validation
-      if(code == 'ALLFREE') {
+      if(this.invalids.includes(code)) {
         alert('This coupon is no longer valid. Sorry!')
         this.$refs.input.value = code = '';
       }
