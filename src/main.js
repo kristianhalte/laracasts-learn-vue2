@@ -1,22 +1,20 @@
 import Vue from 'vue'
 // import App from './App.vue'
 
+let source = {
+  user: {
+    name: 'John Doe'
+  }
+}
+
 new Vue({
   el: '#one',
-  data: {
-    user: {
-      name: 'John Doe'
-    }
-  },
+  data: source,
   // render: h => h(App)
 })
 
 new Vue({
   el: '#two',
-  data: {
-    user: {
-      name: 'Jane Doe'
-    }
-  },
+  data: source,
   // render: h => h(App)
 })
