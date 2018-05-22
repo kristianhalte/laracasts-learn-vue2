@@ -8,7 +8,10 @@ Vue.component('coupon', {
   `,
   methods: {
     updateCode(code) {
-      // add validation
+      // validation
+      if(code == 'ALLFREE') {
+        console.log('This coupon is no longer valid. Sorry!')
+      }
       this.$emit('input', code);
     }
   }
