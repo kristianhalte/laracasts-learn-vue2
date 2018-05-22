@@ -6,8 +6,8 @@
   </head>
   <body>
     <div id="root">
-      <!-- <input type="text" v-model="coupon"> -->
-      <input type="text" :value="coupon" @input="coupon = $event.target.value">
+      This is the same <input type="text" v-model="coupon">
+      as this <input type="text" :value="coupon" @input="coupon = $event.target.value">
     </div>
     <script src="/dist/build.js"></script>
   </body>
