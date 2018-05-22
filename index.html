@@ -7,7 +7,7 @@
   <body>
     <div id="root">
       <!-- <input type="text" v-model="coupon"> -->
-      <input type="text" :value="coupon">
+      <input type="text" :value="coupon" @input="coupon = $event.target.value">
     </div>
     <script src="/dist/build.js"></script>
   </body>
