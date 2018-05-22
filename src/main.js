@@ -4,13 +4,14 @@ import Vue from 'vue'
 Vue.component('coupon', {
   props: ['code'],
   template: `
-    <input type="text" :value="code" @input="updateCode($event.target.value)" />
+    <input type="text" :value="code" @input="updateCode($event.target.value)">
   `,
   methods: {
     updateCode(code) {
       // validation
       if(code == 'ALLFREE') {
-        console.log('This coupon is no longer valid. Sorry!')
+        alert('This coupon is no longer valid. Sorry!')
+        return
       }
       this.$emit('input', code);
     }
@@ -20,8 +21,7 @@ Vue.component('coupon', {
 new Vue({
   el: '#root',
   data: {
-    coupon: 'FREEBIE',
-    code: 'Other free stuff'
+    coupon: 'FREEBIE'
   }
   // render: h => h(App)
 })
