@@ -11,8 +11,7 @@ Vue.component('coupon', {
       // validation
       if(code == 'ALLFREE') {
         alert('This coupon is no longer valid. Sorry!')
-        this.$refs.input.value = '';
-        return;
+        this.$refs.input.value = code = '';
       }
       this.$emit('input', code);
     }
