@@ -1,7 +1,7 @@
 import Vue from 'vue'
 // import App from './App.vue'
 
-let source = {
+let store = {
   user: {
     name: 'John Doe'
   }
@@ -9,12 +9,18 @@ let source = {
 
 new Vue({
   el: '#one',
-  data: source,
+  data: {
+    foo: 'bar',
+    shared: store
+  }
   // render: h => h(App)
 })
 
 new Vue({
   el: '#two',
-  data: source,
+  data: {
+    foo: 'other bar',
+    shared: store
+  }
   // render: h => h(App)
 })
