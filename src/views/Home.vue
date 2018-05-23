@@ -8,7 +8,7 @@
               {{ status.user.name }} said...
             </p>
             <p>
-              A moment ago
+              {{ postedOn(status) }}
             </p>
           </div>
           <div class="message-body" v-text="status.body"></div>
@@ -25,16 +25,19 @@ let response = {
       user: {
         name: 'Kristian'
       },
-      body: 'Something awesome'
+      body: 'Something awesome',
+      created_at: Date.now() - 5000000
     },
     {
       user: {
         name: 'George'
       },
-      body: 'Something less awesome'
+      body: 'Something less awesome',
+      created_at: Date.now() - 500000
     }
   ]
-}
+};
+import moment from 'moment';
 export default {
   name: 'home',
   data() {
@@ -45,6 +48,11 @@ export default {
   created() {
     // fire off ajax
     this.statuses = response.data;
+  },
+  methods: {
+    postedOn(status) {
+      return moment(status.created_at).fromNow();
+    }
   }
 }
 </script>
