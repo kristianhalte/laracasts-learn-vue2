@@ -8,7 +8,7 @@
               {{ status.user.name }} said...
             </p>
             <p>
-              {{ status.created_at | ago }}
+              {{ status.created_at | ago | capitalize }}
             </p>
           </div>
           <div class="message-body" v-text="status.body"></div>
@@ -48,6 +48,9 @@ export default {
   filters: {
     ago(date) {
       return moment(date).fromNow();
+    },
+    capitalize(value) {
+      return value.toUpperCase();
     }
   },
   created() {
