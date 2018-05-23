@@ -8,7 +8,7 @@
               {{ status.user.name }} said...
             </p>
             <p>
-              {{ postedOn(status) }}
+              {{ status.created_at | ago | capitalize }}
             </p>
           </div>
           <div class="message-body" v-text="status.body"></div>
@@ -26,14 +26,14 @@ let response = {
         name: 'Kristian'
       },
       body: 'Something awesome',
-      created_at: Date.now() - 5000000
+      created_at: Date.now() - 23494304
     },
     {
       user: {
         name: 'George'
       },
       body: 'Something less awesome',
-      created_at: Date.now() - 500000
+      created_at: Date.now() - 2349823
     }
   ]
 };
@@ -45,14 +45,17 @@ export default {
       statuses: []
     }
   },
+  filters: {
+    ago(date) {
+      return moment(date).fromNow();
+    },
+    capitalize(value) {
+      return value.toUpperCase();
+    }
+  },
   created() {
     // fire off ajax
     this.statuses = response.data;
-  },
-  methods: {
-    postedOn(status) {
-      return moment(status.created_at).fromNow();
-    }
   }
 }
 </script>
