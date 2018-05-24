@@ -13,6 +13,7 @@
           </div>
           <div class="message-body" v-text="status.body"></div>
         </div>
+        <add-to-stream></add-to-stream>
       </div>
     </div>
   </div>
@@ -21,8 +22,10 @@
 <script>
 import moment from 'moment'
 import { mapGetters } from 'vuex'
+import AddToStream from '../components/AddToStream'
 export default {
   name: 'home',
+  components: { AddToStream },
   computed: {
     ...mapGetters([
       'statuses'
