@@ -29,9 +29,22 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-    
+    addStatus: (state, payload) => {
+      var status = {
+        user: {
+          name: payload.name
+        },
+        body: payload.body,
+        created_at: Date.now()
+      }
+      state.statuses.push(status)
+    }
   },
   actions: {
-    
+    addStatus: (context, payload) => {
+      setTimeout(function() {
+        context.commit('addStatus', payload)
+      }, 1000)
+    }
   }
 })
