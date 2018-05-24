@@ -5,12 +5,12 @@
         Push to the stream
       </div>
       <div class="message-body">
-        <form>
+        <form @submit.prevent="onSubmit">
           <p class="control">
             <label class="label">Name</label>
-            <input class="input">
+            <input class="input" v-model="form.name">
             <label class="label">Status</label>
-            <textarea class="textarea"></textarea>
+            <textarea class="textarea" v-model="form.body"></textarea>
           </p>
         </form>
       </div>
@@ -20,7 +20,20 @@
 
 <script>
 export default {
-  name: 'add-to-stream'
+  name: 'add-to-stream',
+  data() {
+    return {
+      form: {
+        name: '',
+        body: ''
+      }
+    }
+  },
+  methods: {
+    onSubmit() {
+
+    }
+  }
 }
 </script>
 
