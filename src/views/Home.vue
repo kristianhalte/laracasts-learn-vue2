@@ -19,43 +19,22 @@
 </template>
 
 <script>
-let response = {
-  data: [
-    {
-      user: {
-        name: 'Kristian'
-      },
-      body: 'Something awesome',
-      created_at: Date.now() - 23494304
-    },
-    {
-      user: {
-        name: 'George'
-      },
-      body: 'Something less awesome',
-      created_at: Date.now() - 2349823
-    }
-  ]
-};
-import moment from 'moment';
+import moment from 'moment'
+import { mapGetters } from 'vuex'
 export default {
   name: 'home',
-  data() {
-    return {
-      statuses: []
-    }
+  computed: {
+    ...mapGetters([
+      'statuses'
+    ])
   },
-  filters: {
+    filters: {
     ago(date) {
       return moment(date).fromNow();
     },
     capitalize(value) {
       return value.toUpperCase();
     }
-  },
-  created() {
-    // fire off ajax
-    this.statuses = response.data;
   }
 }
 </script>
