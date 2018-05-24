@@ -1,6 +1,9 @@
-import VueRouter from 'vue-router';
-import Home from './views/Home';
-import About from './views/About';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from './views/Home'
+import About from './views/About'
+
+Vue.use(VueRouter)
 
 let routes = [
   {
@@ -16,4 +19,4 @@ let routes = [
 export default new VueRouter ({
   routes,
   linkActiveClass: 'is-active'
-});
+})
