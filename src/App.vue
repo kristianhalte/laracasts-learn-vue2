@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <section class="hero is-primary is-medium">
 
       <!-- Hero content: will be in the middle -->
