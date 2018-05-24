@@ -19,7 +19,8 @@
   "homepage": "https://github.com/kristianhalte/laracasts-learn-vue2#readme",
   "dependencies": {
     "moment": "^2.22.1",
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "vuex": "^3.0.1"
   },
   "browserslist": [
     "> 1%",
