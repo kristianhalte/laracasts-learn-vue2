@@ -1,9 +1,6 @@
 import Vue from 'vue';
-import router from './routes'
-// import VueRouter from 'vue-router';
+import router from './router/routes'
 // import App from './App.vue'
-
-// Vue.use(VueRouter);
 
 new Vue({
   el: '#root',
